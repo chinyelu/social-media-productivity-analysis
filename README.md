@@ -1,40 +1,40 @@
 # Social-media-productivity-analysis
-This study analyzes how excessive social media use negatively impacts student productivity by fragmenting attention and worsening mental health, with implications for human capital development.
+$\text{This study analyzes how excessive social media use negatively impacts student productivity by fragmenting attention and worsening mental health, with implications for human capital development.}$
 
 $\text{Chinyelu Phil-Ebosie}$
 
-Data Science in Econ Class
+$\text{Data Science in Econ Class }$
 
-April 2026
+$\text{April 2026 }$
 
 # Dataset
-The dataset used in this notebook is a synthetically generated dataset designed to simulate realistic global digital behavior patterns among students aged 15–25.
+$\text{The dataset used in this notebook is a synthetically generated dataset designed to simulate realistic global digital behavior patterns among students aged 15–25.}$
 
-Each record represents one student and includes:
+$\text{Each record represents one student and includes:}$
 
-demographic attributes
+$\text{demographic attributes}$
 
-socioeconomic context
+$\text{socioeconomic context}$
 
-internet access and usage
+$\text{internet access and usage}$
 
-social media behavior
+$\text{social media behavior}$
 
-academic indicators
+$\text{academic indicators}$
 
-psychological outcomes
+$\text{psychological outcomes }$
 
 # Project Overview
 
-Questions 
+ $\text{Questions}$
 
-Does social media reduce productivity?
+$\text{Does social media reduce productivity? }$
 
-Do attention span and mental health significantly affect productivity_score?
+$\text{Do attention span and mental health significantly affect productivity_score?}$
 
-Does social media use reduce attention_span_minutes?
+$\text{Does social media use reduce attention_span_minutes?}$
 
-Does it increase stress_level, anxiety_score, or depression_score?
+$\text{Does it increase stress_level, anxiety_score, or depression_score?}$
 
 
 
