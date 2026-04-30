@@ -26,15 +26,15 @@ $\text{psychological outcomes }$
 
 # Project Overview
 
- $\text{Questions}$
+$\text{Questions}$
 
-$\text{Does social media reduce productivity? }$
+$\text{Does social media reduce productivity}$
 
-$\text{Do attention span and mental health significantly affect productivity_score?}$
+$\text{Do attention span and mental health significantly affect productivity score?}$
 
-$\text{Does social media use reduce attention_span_minutes?}$
+$\text{Does social media use reduce attention span minutes?}$
 
-$\text{Does it increase stress_level, anxiety_score, or depression_score?}$
+$\text{Does it increase stress level, anxiety score, or depression score?}$
 
 
 
