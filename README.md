@@ -7,10 +7,24 @@ Data Science in Econ Class
 
 April 2026
 
+# Dataset
+The dataset used in this notebook is a synthetically generated dataset designed to simulate realistic global digital behavior patterns among students aged 15–25.
+
+Each record represents one student and includes:
+
+demographic attributes
+
+socioeconomic context
+
+internet access and usage
+
+social media behavior
+
+academic indicators
+
+psychological outcomes
+
 # Project Overview
-### Note: The dataset used in this notebook is a synthetically generated dataset designed to simulate realistic global digital behavior patterns among students aged 15–25.
-
-
 
 Questions 
 
@@ -22,5 +36,5 @@ Does social media use reduce attention_span_minutes?
 
 Does it increase stress_level, anxiety_score, or depression_score?
 
-Do these variables explain (mediate) the relationship between social media and productivity
+
 
