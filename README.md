@@ -43,13 +43,24 @@ $\text{Data Cleaning and Preparation:}$
 $\text{Removed irrelevant variables to streamline the analysis, reducing the dataset from 48 columns to 29 using .Created a new categorical variable to group social media usage into low, medium, and high levels by binning hours into defined ranges.}$
 
 $\text{Statistical Modeling:}$
+
 $\text{Applied linear regression to identify which variables had the strongest impact on productivity.}$
 
 $\text{Mapping:}$
-$\text{Used ggplot2 and the maps package to visualize social media usage across counties.}$
+
+$\text{Used `ggplot2` and the maps package to visualize social media usage across counties.}$
 
 $\text{Visualization:}$
-$\text{Leveraged ggplot2 to build scatter plots and other visualizations to examine relationships between variables, such as how social media usage influences productivity.}$
+
+$\text{Leveraged `ggplot2`to build scatter plots and other visualizations to examine relationships between variables, such as how social media usage influences productivity.}$
+
+# Key Findings
+
+$\text{The linear regression model shows that both attention span and social media usage are statistically significant predictors of productivity `p < 0.001`. Attention span has a strong positive effect on productivity `β = 0.133`, meaning higher attention spans are associated with higher productivity levels. In contrast, social media hours have a significant negative effect `β = -0.213`, indicating that increased social media use is associated with lower productivity.}$
+
+$\text{The model explains about 40.8% of the variation in productivity `R² = 0.4079`, suggesting a moderate explanatory power. The overall model is highly significant `F-statistic p < 2.2e-16`, confirming that the predictors collectively improve the model fit.}$
+
+$\text{Residuals are fairly centered around zero, indicating a reasonable model fit with some variability in prediction error.}$
 
 
 
