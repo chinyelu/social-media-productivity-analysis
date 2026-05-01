@@ -37,4 +37,19 @@ $\text{Does social media use reduce attention span minutes?}$
 $\text{Does it increase stress level, anxiety score, or depression score?}$
 
 
+# Methodology
+$\text{Data Cleaning and Preparation:}$
+
+$\text{Removed irrelevant variables to streamline the analysis, reducing the dataset from 48 columns to 29 using .Created a new categorical variable to group social media usage into low, medium, and high levels by binning hours into defined ranges.}$
+
+$\text{Statistical Modeling:}$
+$\text{Applied linear regression to identify which variables had the strongest impact on productivity.}$
+
+$\text{Mapping:}$
+$\text{Used ggplot2 and the maps package to visualize social media usage across counties.}$
+
+$\text{Visualization:}$
+$\text{Leveraged ggplot2 to build scatter plots and other visualizations to examine relationships between variables, such as how social media usage influences productivity.}$
+
+
 
