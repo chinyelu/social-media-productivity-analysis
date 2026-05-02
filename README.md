@@ -49,30 +49,32 @@ $\text{Mapping:}$
 $\text{Used `ggplot2` and the maps package to visualize social media usage across counties }$
 
 $\text{Visualization:}$
-$\text{Leveraged `ggplot2`to build scatter plots and other visualizations to examine relationships between variables, such as how social media usage influences productivity. }$
+$\text{Leveraged `ggplot2`to build scatter plots and other visualizations to examine relationships between variables, such as how social media usage influences productivity.}$
 
 # Key Findings
 
 # 1. Linear Regression Model: Analyzing which variable has the most effect on productivity
 
-$\text{The linear regression model shows that both attention span and social media usage are statistically significant predictors of productivity `p < 0.001`. Attention span has a strong positive effect on productivity `β = 0.133` , meaning higher attention spans are associated with higher productivity levels. In contrast, social media hours have a significant negative effect `β = -0.213`, indicating that increased social media use is associated with lower productivity.}$
+The linear regression model shows that both attention span and social media usage are statistically significant predictors of productivity `p < 0.001`. Attention span has a strong positive effect on productivity `β = 0.133` , meaning higher attention spans are associated with higher productivity levels. In contrast, social media hours have a significant negative effect `β = -0.213`, indicating that increased social media use is associated with lower productivity.
 
-$\text{The model explains about 40.8% of the variation in productivity `R² = 0.4079`, suggesting a moderate explanatory power. The overall model is highly significant `F-statistic p < 2.2e-16`, confirming that the predictors collectively improve the model fit.}$
+The model explains about 40.8% of the variation in productivity `R² = 0.4079`, suggesting a moderate explanatory power. The overall model is highly significant `F-statistic p < 2.2e-16`, confirming that the predictors collectively improve the model fit.
 
-$\text{Residuals are fairly centered around zero, indicating a reasonable model fit with some variability in prediction error.}$
+Residuals are fairly centered around zero, indicating a reasonable model fit with some variability in prediction error.
 
 <img width="1002" height="720" alt="Screenshot 2026-04-30 222950" src="https://github.com/user-attachments/assets/2c82af56-ae9e-4d41-a593-f5bd3e36ab58" />
 
 # 2. Scatterplot: relationship between social media hours and productivity score
 
-2.This scatter plot visualizes the inverse relationship between daily social media consumption and productivity. Utilizing a linear regression model, the analysis highlights a downward trend in productivity as social media usage increases. The data is segmented into two-hour 'buckets' to better visualize distribution and identify outliers or missing values within the dataset.
+This scatter plot visualizes the inverse relationship between daily social media consumption and productivity. Utilizing a linear regression model, the analysis highlights a downward trend in productivity as social media usage increases. The data is segmented into two-hour 'buckets' to better visualize distribution and identify outliers or missing values within the dataset.
+
 
 <img width="431" height="238" alt="Relationship with social media and productivity" src="https://github.com/user-attachments/assets/32461030-9b4d-40a2-9180-05557453059d" />
 
 
 # 3. FaceBox Plot
 
-A faceted boxplot analysis examining the impact of social media usage levels on depression scores, disaggregated by gender. The visualization reveals a uniform increase in median depression scores as social media consumption rises, suggesting a consistent trend across all identified gender groups
+The faceted boxplot analysis examining the impact of social media usage levels on depression scores, disaggregated by gender. The visualization reveals a uniform increase in median depression scores as social media consumption rises, suggesting a consistent trend across all identified gender groups
+
 
 <img width="960" height="816" alt="Screenshot 2026-05-01 164640" src="https://github.com/user-attachments/assets/3d6bf166-16de-4a22-b9a2-fae8ea8975b1" />
 
