@@ -85,3 +85,8 @@ The faceted boxplot analysis examining the impact of social media usage levels o
 
 <img width="960" height="816" alt="Screenshot 2026-05-01 164640" src="https://github.com/user-attachments/assets/3d6bf166-16de-4a22-b9a2-fae8ea8975b1" />
 
+# Summary Table
+A summary table of aggregate statistics (mean, median, and standard deviation) segmented by education level. The data highlights a strong positive correlation between higher educational attainment and increased productivity, attention span, and wellbeing, alongside a notable decrease in daily social media consumption.
+
+<img width="1823" height="118" alt="Screenshot 2026-05-01 201724" src="https://github.com/user-attachments/assets/b37eeb3e-9c19-4ca7-a7b3-2f5271b15006" />
+
