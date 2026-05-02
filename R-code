@@ -1,0 +1,201 @@
+############## loading packages ###########################
+
+install.packages("dplyr")
+install.packages("ggplot2")
+install.packages("tidyr")
+install.packages("tidyverse")
+install.packages("maps")
+
+library(tidyverse)
+library(maps)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+
+####loading the data####
+df=read.csv("C:/Users/cpeph/Downloads/global_student_dataset_30k.csv")
+
+########################## Cleaning data ###############
+## Removing unecessary columns
+
+df <- df %>%
+  select(-student_id,-device_access,-field_of_study,
+         -online_learning_hours,-education_content_hours,-internet_infrastructure_index,
+         -average_internet_speed_mbps,-news_content_hours,-posts_created_per_week,
+         -comments_written_per_day,-ads_viewed_per_day,-ads_clicked_per_week,
+         -impulse_purchase_score,-adult_content_exposure,-brain_rot_level,
+         -cyberbullying_exposure,-likes_given_per_day,-financial_risk_score,-digital_spending_per_month)
+
+
+##checking for null values#
+colSums(is.na(df))
+
+
+
+                ####                         ####
+                  ### Regression Analysis ###
+               ####                         ####
+
+#Aim is to determine which factor has the most effect on productivity
+
+linmodel<-lm(productivity_score~attention_span_minutes+social_media_hours+
+               stress_level+depression_score+digital_addiction_score+
+               wellbeing_index+ anxiety_score+brain_rot_index+
+               short_video_hours,data=df)
+summary(linmodel)
+
+
+
+              ############################################
+                       #Data Visualizualization 1
+              ############################################
+# Scatterplot showing the relationship between social media hours and productivity score
+
+
+ggplot(df, aes(
+  x = social_media_hours, 
+  y = productivity_score,
+  color = cut(
+    social_media_hours,
+    breaks= c(0,2,4,6,8,10),
+    labels= c("0-2","2-4","4-6","6-8","8-10")
+    )
+  ))+
+  geom_point(size= 3) +
+  geom_smooth(method = "lm", se = FALSE,color = "purple") +
+  theme_minimal() +
+  labs(
+    title = "Relationship between social media hours and productivity score",
+    x = "Social Media Hours",
+    y = "Productivity score",
+    color = "Hours Bucket"
+  )
+
+
+
+
+             #####                      #####
+                 ##Data Visualization 2
+            #####                      #####
+
+library(scales)
+
+
+# Prepare map data
+map_data_final <- df |>
+  rename(country = country) |>
+  mutate(country = case_when(
+    country == "United States of America" ~ "USA",
+    country == "United Kingdom of Great Britain and Northern Ireland" ~ "UK",
+    country == "United Arab Emirates" ~ "UAE",
+    TRUE ~ country
+  ))
+
+# Grouping and averaging social 
+map_data_final <- map_data_final %>%
+  group_by(country) %>%
+  summarise(
+    social_media_hours = mean(social_media_hours, na.rm = TRUE)
+  )
+
+world_map <- map_data("world")
+
+# Creating a map
+socialmedia_usage_map <- ggplot() +
+  
+  geom_map(
+    data = map_data_final,
+    map = world_map,
+    aes(map_id = country),
+    color = "blue",
+    fill = "grey",
+    linewidth = 0.1
+  ) +
+  
+  geom_map(
+    data = map_data_final,
+    map = world_map,
+    aes(fill = social_media_hours,
+        map_id = country)
+  ) +
+  
+  expand_limits(
+    x = world_map$long,
+    y = world_map$lat
+  ) +
+  
+  scale_fill_viridis_c(
+    option = "plasma",
+    trans = "log10",
+    name = "Social Media Hours",
+    na.value = "lightgray",
+    labels = label_comma(),
+    limits = c(1, NA)
+  ) +
+  
+  theme_minimal() +
+  
+  labs(
+    title = "Global Social Media Consumption",
+    x = "",
+    y = ""
+  ) +
+  
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank()
+  )
+
+# Display map
+socialmedia_usage_map
+
+
+##################  ##################
+         #####Summmary Table#######
+##################  ##################
+summary_table <- df %>%
+  
+  group_by(education_level) %>% 
+  summarise(
+    productivity_score_mean = mean(productivity_score, na.rm = TRUE),
+    social_media_hours_mean = mean(social_media_hours, na.rm = TRUE),
+    wellbeing_index_mean = mean(wellbeing_index, na.rm = TRUE),
+    attention_span_mean = mean(attention_span_minutes, na.rm = TRUE),
+
+    productivity_score_median = median(productivity_score, na.rm = TRUE),
+    social_media_hours_median = median(social_media_hours, na.rm = TRUE),
+    wellbeing_index_median = median(wellbeing_index, na.rm = TRUE),
+    attention_span_median = median(attention_span_minutes, na.rm = TRUE),
+    
+    productivity_score_sd = sd(productivity_score, na.rm = TRUE),
+    social_media_hours_sd = sd(social_media_hours, na.rm = TRUE),
+    wellbeing_index_sd = sd(wellbeing_index, na.rm = TRUE),
+    attention_span_sd = median(attention_span_minutes, na.rm = TRUE),
+
+  )
+
+write.csv(summary_table, "summary_table1.csv", row.names = FALSE)
+
+#Categorizing social media usage into low medium and high
+
+df$social_media_usage = cut(
+  df$social_media_hours,
+  breaks= c(0,2,5,10),
+  labels= c("Low","Medium","High"),
+  include.lowest = TRUE  
+)
+
+
+####
+      #Visualization 3 Facebox plt
+#Analyzing depression based of of social media and categorized by gender
+####
+ggplot(df, aes(x = social_media_usage, y = depression_score, fill = gender)) +
+  geom_boxplot() +
+  facet_wrap(~gender) +
+  theme_minimal() +
+  labs(
+    title = "Depression by Social Media Usage and Gender",
+    x = "Social Media Usage",
+    y = "Depression Score"
+  )
