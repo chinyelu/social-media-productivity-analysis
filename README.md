@@ -26,7 +26,7 @@ $\text{psychological outcomes }$
 
 # Project Overview
 
-$\text{This research explores the negative externalities of excessive social media consumption on student populations. The study specifically analyzes how digital engagement fragments attention and correlates with declining mental health, ultimately assessing the broader implications for human capital development.}
+This research explores the negative externalities of excessive social media consumption on student populations. The study specifically analyzes how digital engagement fragments attention and correlates with declining mental health, ultimately assessing the broader implications for human capital development.
 
 $\text{Questions}$
 
